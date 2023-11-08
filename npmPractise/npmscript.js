@@ -1,0 +1,11 @@
+const fs = require('fs-extra');
+fs.mkdirSync('./firstFolder');
+fs.writeFileSync('./firstFolder/newText', "Hello everyone");
+fs.mkdirSync('./secondFolder');
+fs.moveSync('./firstFolder/newText', './secondFolder/newText');
+fs.mkdirSync('./thirdFolder');
+fs.moveSync('./secondFolder/newText', './thirdFolder/newText');
+fs.removeSync('./thirdFolder/newText');
+fs.removeSync('./firstFolder', './secondFolder', './thirdFolder');
+fs.removeSync('./secondFolder');
+fs.removeSync('./thirdFolder');
